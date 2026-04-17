@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    res/xml/file_paths.xml  –  FileProvider path configuration
+    ===========================================================
+    Declares the directories FileProvider is allowed to expose
+    as content:// URIs.  Referenced by the <provider> block
+    injected into AndroidManifest.xml via buildozer.spec's
+    android.extra_manifest_application_arguments.
+
+    files-path  → Context.getFilesDir()   (app private internal storage)
+                   This is where main.py bootstrap copies form1.pdf,
+                   campus.db, and all data/ files on first launch.
+    cache-path  → Context.getCacheDir()   (app private cache dir)
+
+    path="."  makes the entire directory accessible through FileProvider.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Private internal storage: getFilesDir() -->
+    <files-path
+        name="internal_files"
+        path="." />
+
+    <!-- Private cache storage: getCacheDir() -->
+    <cache-path
+        name="cache_files"
+        path="." />
+
+</paths>
